@@ -9,8 +9,8 @@ class Romb {
 
 
     constructor() {
-        this.bindHtml();
-        this.HandleEvent();
+        this.bindHtml(); // hivatkozza az elemeket
+        this.HandleEvent(); // eseménykezelés
     }
 
     bindHtml() {
@@ -23,13 +23,13 @@ class Romb {
 
     HandleEvent() {
         this.calcButton?.addEventListener('click', () => {
-        this.startCalc();
+        this.startCalc(); 
         })
     }
 
     startCalc() {
         
-        const side = Number(this.sideInput?.value);
+        const side = Number(this.sideInput?.value);  // típusok megadása
         const alpha = Number(this.alphaInput?.value);
         const perimeter = this.calcPerimeter(side);
         const area = this.calcArea(side, alpha);
@@ -50,7 +50,7 @@ class Romb {
 
     renderResult(perimeter: number, area: number) {
         if (this.perimeterInput) {
-        this.perimeterInput.value = String(perimeter)
+        this.perimeterInput.value = String(perimeter)  // vissza kell alakítani 
         }
         if (this.areaInput) {
         this.areaInput.value = String(area)
